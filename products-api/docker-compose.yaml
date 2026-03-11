@@ -15,7 +15,7 @@ services:
         condition: service_started
     environment:
       POSTGRES_DB: go_app_dev
-      POSTGRES_HOST: crud-backend-postgres
+      POSTGRES_HOST: market-postgres
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: password
       POSTGRES_PORT: 5432
