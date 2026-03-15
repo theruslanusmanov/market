@@ -5,13 +5,12 @@ services:
     build:
       context: ./products-service
     ports:
-      - 8001:8001
+      - "8001:8001"
 
   # Frontend app
-#  pizza-app:
-#    container_name: pizza-app
-#    build:
-#      context: .
-#      dockerfile: pizza-app/Dockerfile
-#    ports:
-#      - 8000:8000
+  pizza-app:
+    container_name: pizza-app
+    build:
+      context: ./pizza-app
+    ports:
+      - "8080:8080"
