@@ -1,0 +1,8 @@
+services:
+  backend:
+    container_name: products-service
+    build:
+      context: products-service
+      dockerfile: products-api/Dockerfile
+    ports:
+      - 8001:8001

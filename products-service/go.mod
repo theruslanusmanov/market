@@ -1,4 +1,4 @@
-module market/products-api
+module market/products-service
 
 go 1.25.0
 
