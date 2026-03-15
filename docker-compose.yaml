@@ -1,8 +1,17 @@
 services:
-  backend:
+  # Backend service
+  products-service:
     container_name: products-service
     build:
-      context: products-service
-      dockerfile: products-api/Dockerfile
+      context: ./products-service
     ports:
       - 8001:8001
+
+  # Frontend app
+#  pizza-app:
+#    container_name: pizza-app
+#    build:
+#      context: .
+#      dockerfile: pizza-app/Dockerfile
+#    ports:
+#      - 8000:8000
