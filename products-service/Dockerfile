@@ -14,5 +14,5 @@ COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o /products-service
 
 # Run app
-EXPOSE 8001
+EXPOSE 8080
 CMD ["/products-service"]

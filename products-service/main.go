@@ -10,10 +10,9 @@ import (
 
 // product represents data about a record product.
 type product struct {
-	ID     string  `json:"id"`
-	Title  string  `json:"title"`
-	Artist string  `json:"artist"`
-	Price  float64 `json:"price"`
+	ID    string  `json:"id"`
+	Title string  `json:"title"`
+	Price float64 `json:"price"`
 }
 
 // products slice to seed record product data.
@@ -41,19 +40,19 @@ func getProducts(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, products)
 }
 
-// postProducts adds an product from JSON received in the request body.
+// postProducts adds a product from JSON received in the request body.
 func postProducts(c *gin.Context) {
-	var newAlbum product
+	var newProduct product
 
 	// Call BindJSON to bind the received JSON to
-	// newAlbum.
-	if err := c.BindJSON(&newAlbum); err != nil {
+	// newProduct.
+	if err := c.BindJSON(&newProduct); err != nil {
 		return
 	}
 
-	// Add the new album to the slice.
-	products = append(products, newAlbum)
-	c.IndentedJSON(http.StatusCreated, newAlbum)
+	// Add the new product to the slice.
+	products = append(products, newProduct)
+	c.IndentedJSON(http.StatusCreated, newProduct)
 }
 
 // getProductByID locates the product whose ID value matches the id
@@ -61,13 +60,13 @@ func postProducts(c *gin.Context) {
 func getProductByID(c *gin.Context) {
 	id := c.Param("id")
 
-	// Loop through the list of albums, looking for
-	// an album whose ID value matches the parameter.
+	// Loop through the list of products, looking for
+	// an product whose ID value matches the parameter.
 	for _, a := range products {
 		if a.ID == id {
 			c.IndentedJSON(http.StatusOK, a)
 			return
 		}
 	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "product not found"})
 }

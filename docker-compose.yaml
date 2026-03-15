@@ -5,7 +5,7 @@ services:
     build:
       context: ./products-service
     ports:
-      - "8001:8001"
+      - "8080:8080"
 
   # Frontend app
   pizza-app:
@@ -13,4 +13,4 @@ services:
     build:
       context: ./pizza-app
     ports:
-      - "8080:8080"
+      - "5173:5173"
