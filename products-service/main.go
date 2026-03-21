@@ -61,7 +61,7 @@ func getProductByID(c *gin.Context) {
 	id := c.Param("id")
 
 	// Loop through the list of products, looking for
-	// an product whose ID value matches the parameter.
+	// a product whose ID value matches the parameter.
 	for _, a := range products {
 		if a.ID == id {
 			c.IndentedJSON(http.StatusOK, a)
